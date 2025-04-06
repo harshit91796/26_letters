@@ -1,0 +1,794 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for the hero section */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-text {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Custom letter spacing for LENZ */
+.tracking-wider {
+  letter-spacing: 0.3em;
+}
+
+/* Custom styles for the recent work slider */
+.recent-work-slider .slick-slide {
+  padding: 0 1rem;
+}
+
+.recent-work-slider .slick-dots {
+  bottom: -2.5rem;
+}
+
+.recent-work-slider .slick-dots li button:before {
+  font-size: 0.75rem;
+}
+
+/* Floating animation for portfolio images */
+@keyframes float {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Portfolio image hover effects */
+.portfolio-image-container {
+  transition: all 0.5s ease-in-out;
+}
+
+.portfolio-image-container:hover {
+  z-index: 20;
+  transform: scale(1.05);
+}
+
+.portfolio-image-container:hover .portfolio-image {
+  transform: scale(1.1);
+  filter: grayscale(0);
+}
+
+.portfolio-image-container:hover .image-title {
+  opacity: 1;
+}
+
+.portfolio-image {
+  transition: all 0.5s ease-in-out;
+}
+
+.image-title {
+  backdrop-filter: blur(2px);
+}
+
+/* Background transition */
+.portfolio-background {
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Contact section styles */
+.contact-section {
+  background: linear-gradient(to bottom, 
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.8) 20%,
+    rgba(0,0,0,0.8) 80%,
+    rgba(0,0,0,1) 100%
+  );
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Custom font rendering */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+}
+
+/* Contact section specific styles */
+.contact-heading {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Portrait image handling */
+.portrait-container img {
+  filter: contrast(1.1) grayscale(1);
+}
+
+/* Contact section text blend styles */
+.mix-blend-difference {
+  mix-blend-mode: difference;
+  isolation: isolate;
+}
+
+/* Ensure proper text rendering */
+.font-bold {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Contact text cut-out effect */
+.text-cutout {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px white;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* Portrait image masking */
+.mask-gradient {
+  mask-image: linear-gradient(to bottom, 
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 40%,
+    rgba(0,0,0,0) 100%
+  );
+  -webkit-mask-image: linear-gradient(to bottom, 
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 40%,
+    rgba(0,0,0,0) 100%
+  );
+}
+
+/* Ensure sharp text rendering */
+.font-bold {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
+
+/* Letter animation */
+@keyframes letterReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(100%) rotateX(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+/* Image reveal animation */
+@keyframes imageReveal {
+  0% {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+/* Hover effect for navigation */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Image hover effect */
+.portrait-hover {
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.portrait-hover:hover {
+  transform: scale(1.02);
+  filter: grayscale(0);
+}
+
+/* RecentWork continuous upward animation */
+@keyframes floatUpInfinite {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(80vh);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(-20vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40vh);
+    opacity: 0;
+  }
+}
+
+@keyframes initialFloatUp {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.floating-image {
+  animation: initialFloatUp 2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.floating-image.animate {
+  animation: floatUpInfinite 15s linear infinite;
+}
+
+.floating-image:hover {
+  animation-play-state: paused;
+  z-index: 30;
+}
+
+/* Smooth image transitions */
+.floating-image img {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.floating-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Smooth hover transitions */
+.image-hover {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Connecting lines animation */
+@keyframes drawLine {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+svg path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Add this to your existing styles */
+
+@keyframes floatUpContinuous {
+  0% {
+    transform: translateY(20px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes initialFloatUp {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.floating-image {
+  animation: initialFloatUp 2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.floating-image.animate {
+  animation: floatUpContinuous 6s ease-in-out infinite;
+}
+
+.floating-image:hover {
+  animation-play-state: paused;
+  z-index: 30;
+}
+
+/* Reverse rain animation */
+@keyframes reverseRain {
+  0% {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20vh);
+    opacity: 0;
+  }
+}
+
+.floating-image {
+  will-change: transform, opacity;
+}
+
+.floating-image.animate {
+  animation: reverseRain 20s linear infinite;
+}
+
+.floating-image.speed-1 {
+  animation-duration: 18s;
+}
+
+.floating-image.speed-2 {
+  animation-duration: 22s;
+}
+
+.floating-image.speed-3 {
+  animation-duration: 25s;
+}
+
+.floating-image:hover {
+  animation-play-state: paused;
+  z-index: 30;
+}
+
+/* Loading Screen Animations */
+@keyframes fogAnimation1 {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-30%, -30%) scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes fogAnimation2 {
+  0% {
+    transform: translate(50%, 50%) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(30%, 30%) scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes fogAnimation3 {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes logoGlow {
+  0% {
+    filter: brightness(0) blur(10px);
+    transform: scale(0.8);
+  }
+  50% {
+    filter: brightness(1.2) blur(0px);
+    transform: scale(1);
+  }
+  100% {
+    filter: brightness(1) blur(0px);
+    transform: scale(1);
+  }
+}
+
+.fog-layer-1,
+.fog-layer-2,
+.fog-layer-3 {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  mix-blend-mode: overlay;
+}
+
+.fog-layer-1 {
+  animation: fogAnimation1 4s ease-out infinite;
+}
+
+.fog-layer-2 {
+  animation: fogAnimation2 6s ease-out infinite;
+}
+
+.fog-layer-3 {
+  animation: fogAnimation3 5s ease-out infinite;
+}
+
+.logo-glow {
+  animation: logoGlow 3s ease-out forwards;
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.3));
+}
+
+/* Add to your existing styles */
+
+/* Cinematic Loading Screen Effects */
+@keyframes cinematicFog1 {
+  0% {
+    transform: translate(-30%, -30%) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(30%, 30%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes cinematicFog2 {
+  0% {
+    transform: translate(30%, -30%) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-30%, 30%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes cinematicFog3 {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes grainAnimation {
+  0% { transform: translate(0, 0) }
+  10% { transform: translate(-5%, -5%) }
+  20% { transform: translate(5%, 5%) }
+  30% { transform: translate(-5%, 5%) }
+  40% { transform: translate(5%, -5%) }
+  50% { transform: translate(-5%, -5%) }
+  60% { transform: translate(5%, 5%) }
+  70% { transform: translate(-5%, 5%) }
+  80% { transform: translate(5%, -5%) }
+  90% { transform: translate(-5%, -5%) }
+  100% { transform: translate(0, 0) }
+}
+
+@keyframes loadingLine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes lightRayRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cinematic-grain {
+  position: absolute;
+  inset: -150%;
+  width: 400%;
+  height: 400%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.15;
+  animation: grainAnimation 0.8s steps(1) infinite;
+}
+
+.fog-layer-cinematic-1,
+.fog-layer-cinematic-2,
+.fog-layer-cinematic-3 {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  mix-blend-mode: screen;
+}
+
+.fog-layer-cinematic-1 {
+  animation: cinematicFog1 8s ease-out infinite;
+}
+
+.fog-layer-cinematic-2 {
+  animation: cinematicFog2 12s ease-out infinite;
+}
+
+.fog-layer-cinematic-3 {
+  animation: cinematicFog3 10s ease-out infinite;
+}
+
+.logo-cinematic {
+  filter: drop-shadow(0 0 30px rgba(255,255,255,0.5));
+  transition: all 0.5s ease-out;
+}
+
+.cinematic-text {
+  text-shadow: 0 0 20px rgba(255,255,255,0.5);
+  letter-spacing: 1em;
+}
+
+.loading-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, white, transparent);
+  animation: loadingLine 2s ease-in-out infinite;
+}
+
+.vignette-effect {
+  background: radial-gradient(circle, transparent 40%, black 140%);
+}
+
+.light-rays {
+  background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(255,255,255,0.1) 60deg, transparent 120deg);
+  animation: lightRayRotate 20s linear infinite;
+  opacity: 0.5;
+}
+
+/* Enhance existing logo glow */
+.logo-glow {
+  animation: none;
+  transition: all 0.5s ease-out;
+}
+
+.logo-glow:hover {
+  filter: drop-shadow(0 0 40px rgba(255,255,255,0.7));
+  transform: scale(1.05);
+}
+
+/* Add to your existing styles */
+
+/* Dynamic Fog Effects */
+@keyframes fogFlow1 {
+  0% { transform: translate(-10%, -10%) scale(1.1); opacity: 0; }
+  20% { opacity: 0.3; }
+  80% { opacity: 0.3; }
+  100% { transform: translate(10%, 10%) scale(1.2); opacity: 0; }
+}
+
+@keyframes fogFlow2 {
+  0% { transform: translate(10%, -10%) scale(1.1); opacity: 0; }
+  20% { opacity: 0.3; }
+  80% { opacity: 0.3; }
+  100% { transform: translate(-10%, 10%) scale(1.2); opacity: 0; }
+}
+
+@keyframes fogFlow3 {
+  0% { transform: translate(0%, 10%) scale(1.1); opacity: 0; }
+  20% { opacity: 0.3; }
+  80% { opacity: 0.3; }
+  100% { transform: translate(0%, -10%) scale(1.2); opacity: 0; }
+}
+
+.dynamic-fog-1,
+.dynamic-fog-2,
+.dynamic-fog-3 {
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+}
+
+.dynamic-fog-1 {
+  animation: fogFlow1 8s infinite;
+}
+
+.dynamic-fog-2 {
+  animation: fogFlow2 12s infinite;
+}
+
+.dynamic-fog-3 {
+  animation: fogFlow3 10s infinite;
+}
+
+/* Particle Effects */
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-100px) translateX(50px);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: particleFloat 4s ease-in-out infinite;
+}
+
+/* Logo Glow Effect */
+.logo-glow-effect {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 70%
+  );
+  filter: blur(20px);
+  transform-origin: center;
+}
+
+/* Light Rays Effect */
+@keyframes rotateRays {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.light-rays-effect {
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    transparent,
+    rgba(255, 255, 255, 0.1) 20%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.1) 60%,
+    transparent 80%
+  );
+  animation: rotateRays 20s linear infinite;
+}
+
+/* Ambient Light */
+.ambient-light {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  filter: blur(50px);
+}
+
+/* Vignette Effect */
+.vignette {
+  background: radial-gradient(
+    circle at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+/* Smooth Transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Add to your existing styles */
+
+/* Typing animation */
+@keyframes blink {
+  0%, 100% { border-color: transparent }
+  50% { border-color: white }
+}
+
+.typing-text {
+  display: inline-block;
+  white-space: pre;
+  border-right: 2px solid white;
+  animation: blink 1s step-end infinite;
+}
+
+/* Ensure the cursor disappears when typing is complete */
+.typing-text.complete {
+  border-right: none;
+  animation: none;
+}
+
+/* Smooth background transitions */
+.duration-3000 {
+  transition-duration: 3000ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhance image transitions */
+img {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+  transform: translateZ(0);
+}

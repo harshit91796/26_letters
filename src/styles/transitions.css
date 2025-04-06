@@ -1,0 +1,255 @@
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Transition state */
+body.transitioning {
+  cursor: none;
+}
+
+/* Motion blur effect */
+.blur-transition {
+  transition: filter 1.5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.blur-transition.active {
+  filter: blur(10px);
+}
+
+/* Radial gradient background for transitions */
+.bg-gradient-radial {
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+/* Glow effect */
+.transition-glow {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* Cinematic transition utilities */
+.transition-all-cinematic {
+  transition: all 2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.transition-transform-cinematic {
+  transition: transform 2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.transition-opacity-cinematic {
+  transition: opacity 2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+/* Scale animations */
+.scale-up-cinematic {
+  transform: scale(1.1);
+  transition: transform 2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.scale-down-cinematic {
+  transform: scale(0.9);
+  transition: transform 2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+/* Fade animations */
+.fade-in-cinematic {
+  opacity: 1;
+  transition: opacity 2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.fade-out-cinematic {
+  opacity: 0;
+  transition: opacity 2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+/* Parallax effect */
+.parallax-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.parallax-element {
+  transform: translateZ(0);
+  transition: transform 1.5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 2px;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  border-radius: 1px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.transitioning .progress-bar {
+  opacity: 1;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  transform-origin: left;
+  border-radius: 1px;
+  transition: transform 0.5s ease;
+}
+
+/* Backdrop blur */
+.backdrop-blur-transition {
+  backdrop-filter: blur(0px);
+  transition: backdrop-filter 1.5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.backdrop-blur-transition.active {
+  backdrop-filter: blur(10px);
+}
+
+/* Custom easing curves */
+:root {
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+  --transition-duration: 2s;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(100vh) scale(0.9); opacity: 0; }
+  20% { transform: translateY(80vh) scale(1); opacity: 1; }
+  80% { transform: translateY(-20vh) scale(1); opacity: 1; }
+  100% { transform: translateY(-50vh) scale(0.8); opacity: 0; }
+}
+
+/* Recent Work specific animations */
+.recent-work-floating {
+  animation: float 12s linear infinite;
+  animation-play-state: running;
+}
+
+.recent-work-floating:hover {
+  animation-play-state: paused;
+}
+
+.speed-1 { animation-duration: 15s; }
+.speed-2 { animation-duration: 12s; }
+.speed-3 { animation-duration: 9s; }
+
+/* Remove any existing float-animation styles if present */
+.float-animation {
+  /* Remove animation properties here */
+}
+
+/* Project Stages Hover Effect */
+.project-stage:hover img {
+  transform: scale(1.03);
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Service Card Overlay */
+.service-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  transition: opacity 0.6s ease;
+}
+
+.service-card:hover .service-overlay {
+  opacity: 0.9;
+}
+
+/* Text Shadow Enhancements */
+.text-stroke {
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Smooth Scale Transitions */
+.scale-transition {
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Horizontal Scroll Gallery */
+.horizontal-scroll-container {
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+}
+
+.horizontal-scroll-panel {
+  scroll-snap-align: start;
+  flex: 0 0 100vw;
+}
+
+/* Service Card Hover Effect */
+.service-card:hover img {
+  transform: scale(1.03) rotate(0.5deg);
+  filter: brightness(1.1);
+  transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Gradient Text Effect */
+.text-gradient {
+  background: linear-gradient(45deg, #fff 0%, #aaa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Scroll Progress Indicator */
+.scroll-progress-track {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+}
+
+.scroll-progress-bar {
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+/* Add to your CSS */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+}
+
+/* Update the services-container CSS */
+.services-container {
+  scroll-snap-type: y mandatory;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+}
+
+/* Add touch scrolling support */
+@media (pointer: coarse) {
+  .services-container {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+} 
