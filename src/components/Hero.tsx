@@ -6,6 +6,7 @@ import { heroBg, person2, person3, person4, person5, logo } from '../assets/imag
 const backgrounds = [heroBg, person2, person3, person4, person5];
 const TEXT_TO_TYPE = "L E T T E R S";
 
+
 const Hero: React.FC = () => {
   const [currentBg, setCurrentBg] = useState(0);
   const [isTextVisible, setIsTextVisible] = useState(false);
